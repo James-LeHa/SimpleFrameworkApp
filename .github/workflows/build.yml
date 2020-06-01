@@ -19,6 +19,8 @@ jobs:
           nuget-version: 'latest'
       - name: Setup MSBuild.exe
         uses: warrenbuckley/Setup-MSBuild@v1
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.2
       - run: msbuild -t:restore
       - run: msbuild -t:build
       - name: Nuget Add Source
